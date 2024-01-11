@@ -1,2 +1,3 @@
 MONGODB_HOST: mongodb.76sdevops.website
-REDIS_HOST  : redis.76sdevops.website
+REDIS_HOST: redis.76sdevops.website
+CATALOGUE_HOST: catalogue.76sdevops.website
