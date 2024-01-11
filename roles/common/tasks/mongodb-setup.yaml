@@ -24,13 +24,13 @@
 #     msg: "product count: {{product_count}}"
 
 - name: "load catalogue data"
-  ansible.builtin.command: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"        
+  ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"        
   when: component == "catalogue" and products_count.stdout =="0"
   #ignore_errors: true
   #here in when condition we are using "And condition" so even one failure it exits 
 
 - name: "load user data"
-  ansible.builtin.command: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"        
+  ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"        
   when: component == "user" and products_count.stdout =="0"
   #ignore_errors: true  
 
