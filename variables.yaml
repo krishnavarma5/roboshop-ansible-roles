@@ -1,3 +1,10 @@
 MONGODB_HOST: mongodb.76sdevops.website
 REDIS_HOST: redis.76sdevops.website
 CATALOGUE_HOST: catalogue.76sdevops.website
+USER_HOST: user.76sdevops.website
+CART_HOST: cart.76sdevops.website
+SHIPPING_HOST: shipping.76sdevops.website
+PAYMENT_HOST: payment.76sdevops.website
+MYSQL_HOST: mysql.76sdevops.website
+RABBITMQ_HOST: rabbitmq.76sdevops.website
+DISPATCH_HOST: dispatch.76sdevops.website
