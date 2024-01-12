@@ -8,3 +8,4 @@ PAYMENT_HOST: payment.76sdevops.website
 MYSQL_HOST: mysql.76sdevops.website
 RABBITMQ_HOST: rabbitmq.76sdevops.website
 DISPATCH_HOST: dispatch.76sdevops.website
+WEB_HOST: web.76sdevops.website 
