@@ -9,9 +9,52 @@
   tags:
   - deployment     
   ansible.builtin.file:
-    path: "/app*"
+    path: /app
     state: absent
     force: yes
+
+- name: create app directorytags:
+  tags:
+  - deployment
+  ansible.builtin.file:
+    name: /app
+    state: directory
+
+- name: "download {{component}} application"
+  tags:
+  - deployment
+  ansible.builtin.get_url:
+    url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
+    dest: /tmp
+
+- name: "extract {{component}} application" 
+  tags:
+  - deployment
+  ansible.builtin.unarchive:
+    src: "/tmp/{{component}}.zip"
+    dest: /app
+    remote_src: yes
+
+- name: install nodejs
+  tags:
+  - deployment
+  ansible.builtin.dnf:
+    name: nodejs
+    state: present
+
+- name: Install dependencies
+  tags:
+  - deployment
+  ansible.builtin.command: npm install
+  args:
+    chdir: /app    
+
+- name: "restart {{component}}"
+  tags:
+  - deployment
+  ansible.builtin.service:
+    name: "{{component}}"
+    state: restarted       
     
  
 
