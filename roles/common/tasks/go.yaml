@@ -11,5 +11,5 @@
   - go build  
    
   args:
-    chdir/app
+     chdir: /app
 
