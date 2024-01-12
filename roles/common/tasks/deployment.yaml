@@ -13,7 +13,7 @@
     state: absent
     force: yes
 
-- name: create app directorytags:
+- name: create app directory
   tags:
   - deployment
   ansible.builtin.file:
